@@ -16,3 +16,4 @@ go run examples/<name>/main.go
 | [`passive_resilience_framework`](passive_resilience_framework/main.go) | MiracleSorter | Zero-compute ambient sorting via environmental entropy and cosmic patience |
 | [`bubble_leaderboard`](bubble_leaderboard/main.go) | BubbleSorter | Sort a five-player game leaderboard by score |
 | [`bucket_exam_scores`](bucket_exam_scores/main.go) | BucketSorter | Grade a class of exam results and compute a median |
+| [`cocktail_network_latency`](cocktail_network_latency/main.go) | CocktailShakerSorter | Sort CDN round-trip times and compute latency percentiles |
