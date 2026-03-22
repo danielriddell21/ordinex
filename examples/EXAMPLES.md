@@ -18,3 +18,4 @@ go run examples/<name>/main.go
 | [`bucket_exam_scores`](bucket_exam_scores/main.go) | BucketSorter | Grade a class of exam results and compute a median |
 | [`cocktail_network_latency`](cocktail_network_latency/main.go) | CocktailShakerSorter | Sort CDN round-trip times and compute latency percentiles |
 | [`counting_vote_tally`](counting_vote_tally/main.go) | CountingSorter | Tally a 1–5 satisfaction survey and compute a mean score |
+| [`gnome_playlist`](gnome_playlist/main.go) | GnomeSorter | Sort a music playlist by track duration |
