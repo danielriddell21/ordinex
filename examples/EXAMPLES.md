@@ -24,3 +24,4 @@ go run examples/<name>/main.go
 | [`merge_sales_reports`](merge_sales_reports/main.go) | MergeSorter | Combine two pre-sorted regional sales reports |
 | [`pancake_stack`](pancake_stack/main.go) | PancakeSorter | Sort a stack of pancakes by diameter |
 | [`quick_product_catalogue`](quick_product_catalogue/main.go) | QuickSorter | Sort a product catalogue by price |
+| [`radix_employee_ids`](radix_employee_ids/main.go) | RadixSorter | Sort an employee directory by fixed-width ID |
