@@ -23,3 +23,4 @@ go run examples/<name>/main.go
 | [`insertion_card_hand`](insertion_card_hand/main.go) | InsertionSorter | Sort a poker hand — the same way a person would hold cards |
 | [`merge_sales_reports`](merge_sales_reports/main.go) | MergeSorter | Combine two pre-sorted regional sales reports |
 | [`pancake_stack`](pancake_stack/main.go) | PancakeSorter | Sort a stack of pancakes by diameter |
+| [`quick_product_catalogue`](quick_product_catalogue/main.go) | QuickSorter | Sort a product catalogue by price |
