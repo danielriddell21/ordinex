@@ -26,3 +26,4 @@ go run examples/<name>/main.go
 | [`quick_product_catalogue`](quick_product_catalogue/main.go) | QuickSorter | Sort a product catalogue by price |
 | [`radix_employee_ids`](radix_employee_ids/main.go) | RadixSorter | Sort an employee directory by fixed-width ID |
 | [`selection_bargain_finder`](selection_bargain_finder/main.go) | SelectionSorter | Find the k cheapest items in a shopping basket |
+| [`shell_log_sorter`](shell_log_sorter/main.go) | ShellSorter | Reorder out-of-sequence application log entries by timestamp |
