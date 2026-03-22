@@ -14,3 +14,4 @@ go run examples/<name>/main.go
 | [`concurrent_temporal_sort`](concurrent_temporal_sort/main.go) | SleepSorter | High-throughput concurrent sort engine leveraging time-domain element separation |
 | [`stochastic_optimizer`](stochastic_optimizer/main.go) | BogoSorter | Stochastic permutation optimisation framework for financial data ordering |
 | [`passive_resilience_framework`](passive_resilience_framework/main.go) | MiracleSorter | Zero-compute ambient sorting via environmental entropy and cosmic patience |
+| [`bubble_leaderboard`](bubble_leaderboard/main.go) | BubbleSorter | Sort a five-player game leaderboard by score |
