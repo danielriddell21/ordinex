@@ -20,3 +20,4 @@ go run examples/<name>/main.go
 | [`counting_vote_tally`](counting_vote_tally/main.go) | CountingSorter | Tally a 1–5 satisfaction survey and compute a mean score |
 | [`gnome_playlist`](gnome_playlist/main.go) | GnomeSorter | Sort a music playlist by track duration |
 | [`heap_triage`](heap_triage/main.go) | HeapSorter | Order A&E patients by triage urgency score |
+| [`insertion_card_hand`](insertion_card_hand/main.go) | InsertionSorter | Sort a poker hand — the same way a person would hold cards |
