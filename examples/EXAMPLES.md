@@ -11,3 +11,4 @@ go run examples/<name>/main.go
 | Example | Algorithm | Scenario |
 |---|---|---|
 | [`enterprise_data_pipeline`](enterprise_data_pipeline/main.go) | ThanosSorter | Enterprise observability pipeline that resolves data overhead by eliminating it |
+| [`concurrent_temporal_sort`](concurrent_temporal_sort/main.go) | SleepSorter | High-throughput concurrent sort engine leveraging time-domain element separation |
