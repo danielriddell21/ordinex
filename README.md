@@ -84,3 +84,7 @@ s := sortilege.ThanosSorter{
     Rand: rand.New(rand.NewPCG(42, 0)), // nil = seeded from time
 }
 ```
+
+## Examples
+
+Runnable examples for every algorithm are in the [`examples/`](examples/EXAMPLES.md) directory.
