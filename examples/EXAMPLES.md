@@ -25,3 +25,4 @@ go run examples/<name>/main.go
 | [`pancake_stack`](pancake_stack/main.go) | PancakeSorter | Sort a stack of pancakes by diameter |
 | [`quick_product_catalogue`](quick_product_catalogue/main.go) | QuickSorter | Sort a product catalogue by price |
 | [`radix_employee_ids`](radix_employee_ids/main.go) | RadixSorter | Sort an employee directory by fixed-width ID |
+| [`selection_bargain_finder`](selection_bargain_finder/main.go) | SelectionSorter | Find the k cheapest items in a shopping basket |
