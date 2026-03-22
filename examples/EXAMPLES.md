@@ -21,3 +21,4 @@ go run examples/<name>/main.go
 | [`gnome_playlist`](gnome_playlist/main.go) | GnomeSorter | Sort a music playlist by track duration |
 | [`heap_triage`](heap_triage/main.go) | HeapSorter | Order A&E patients by triage urgency score |
 | [`insertion_card_hand`](insertion_card_hand/main.go) | InsertionSorter | Sort a poker hand — the same way a person would hold cards |
+| [`merge_sales_reports`](merge_sales_reports/main.go) | MergeSorter | Combine two pre-sorted regional sales reports |
