@@ -48,6 +48,7 @@ type Sorter interface {
 | `MiracleSorter` | O(∞) | O(∞) | O(1) | Waits for a cosmic ray |
 | `ThanosSorter` | O(n) | O(n) | O(n) | Eliminates half until sorted |
 | `VibeSorter` | O($) | O(☁) | O(☁) | Sends the array to an LLM. Prays. |
+| `StalinSorter` | O(n) | O(n) | O(n) | Removes any element smaller than the running maximum |
 
 ## Configurable sorters
 
