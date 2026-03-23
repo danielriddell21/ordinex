@@ -1,14 +1,15 @@
 // Package sortilege provides a collection of sorting algorithm implementations.
 //
 // All implementations satisfy the Sorter interface. Most return a slice of the
-// same length as the input. ThanosSort is an exception — it may return a
-// shorter slice as elements are randomly eliminated.
+// same length as the input. ThanosSorter and StalinSorter are exceptions — they
+// may return a shorter slice as elements are eliminated during sorting.
 package sortilege
 
 // Sorter is implemented by every sorting algorithm in this package.
 type Sorter interface {
 	// Sort returns a sorted copy of input. The original slice is never modified.
-	// Most implementations preserve all elements; ThanosSort may return fewer.
+	// Most implementations preserve all elements; ThanosSorter and StalinSorter
+	// may return fewer.
 	Sort(input []int) []int
 
 	// Name returns the human-readable name of the algorithm.

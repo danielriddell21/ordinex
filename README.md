@@ -4,10 +4,20 @@
 
 One interface. No sacrifices required.
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/danielriddell21/sortilege.svg)](https://pkg.go.dev/github.com/danielriddell21/sortilege)
+[![Go 1.25](https://img.shields.io/badge/go-1.25-blue)](https://go.dev)
+[![MIT License](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
+
+## Installation
+
+```sh
+go get github.com/danielriddell21/sortilege@latest
+```
+
 ## Quick start
 
 ```go
-import "sortilege"
+import "github.com/danielriddell21/sortilege"
 
 s := sortilege.MergeSorter{}
 sorted := s.Sort([]int{5, 3, 1, 4, 2})
@@ -25,6 +35,7 @@ type Sorter interface {
 ```
 
 `Sort` returns a sorted **copy** — the original slice is never modified.
+`ThanosSorter` and `StalinSorter` may return a shorter slice than the input.
 
 ## Algorithms
 
@@ -99,3 +110,8 @@ s := sortilege.ThanosSorter{
 ## Examples
 
 Runnable examples for every algorithm are in the [`examples/`](examples/EXAMPLES.md) directory.
+
+## Docs
+
+- [Benchmark results](docs/BENCHMARKS.md) — measured on Apple M1 Pro
+- [Complexity chart](docs/COMPLEXITY.md) — visual comparison of all algorithms
