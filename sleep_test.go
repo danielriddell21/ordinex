@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func TestSleepSort(t *testing.T) {

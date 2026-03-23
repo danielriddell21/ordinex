@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func TestPancakeSort(t *testing.T) {

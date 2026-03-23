@@ -4,7 +4,7 @@ import (
 	"math/rand/v2"
 	"testing"
 
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func TestThanosSort(t *testing.T) {

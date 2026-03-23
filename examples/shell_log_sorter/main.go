@@ -9,7 +9,7 @@ package main
 
 import (
 	"fmt"
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func main() {

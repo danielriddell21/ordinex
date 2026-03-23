@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func TestSelectionSort(t *testing.T) {

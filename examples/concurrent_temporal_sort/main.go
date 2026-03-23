@@ -11,7 +11,7 @@ package main
 
 import (
 	"fmt"
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 	"time"
 )
 

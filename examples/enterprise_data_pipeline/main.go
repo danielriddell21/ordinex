@@ -13,7 +13,7 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
-	"sortilege"
+	"github.com/danielriddell21/sortilege"
 )
 
 func main() {
