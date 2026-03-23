@@ -1,6 +1,7 @@
 package sortilege_test
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 
@@ -57,4 +58,12 @@ func BenchmarkMiracleSort(b *testing.B) {
 			s.Sort(sortedData)
 		}
 	})
+}
+
+// MiracleSorter returns immediately when the input is already sorted.
+func ExampleMiracleSorter() {
+	s := sortilege.MiracleSorter{}
+	fmt.Println(s.Sort([]int{1, 2, 3, 4, 5}))
+	// Output:
+	// [1 2 3 4 5]
 }

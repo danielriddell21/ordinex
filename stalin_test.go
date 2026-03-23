@@ -1,6 +1,7 @@
 package sortilege_test
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 
@@ -54,4 +55,13 @@ func BenchmarkStalinSort(b *testing.B) {
 			s.Sort(data)
 		}
 	})
+}
+
+// StalinSorter removes any element smaller than the running maximum.
+// The returned slice is sorted but may be shorter than the input.
+func ExampleStalinSorter() {
+	s := sortilege.StalinSorter{}
+	fmt.Println(s.Sort([]int{3, 1, 4, 1, 5, 9, 2, 6}))
+	// Output:
+	// [3 4 5 9]
 }

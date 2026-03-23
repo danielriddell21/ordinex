@@ -59,3 +59,10 @@ func BenchmarkHeapSort(b *testing.B) {
 		})
 	}
 }
+
+func ExampleHeapSorter() {
+	s := sortilege.HeapSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}

@@ -1,0 +1,50 @@
+# sortilege
+
+> A Go library providing 19 sorting algorithm implementations behind a single `Sorter` interface. One interface. No sacrifices required.
+
+sortilege is importable as `github.com/danielriddell21/sortilege`. It has no external dependencies.
+
+The central interface:
+
+```go
+type Sorter interface {
+    Sort(input []int) []int  // returns a sorted copy; never modifies input
+    Name() string            // human-readable algorithm name
+}
+```
+
+All sorters are zero-configuration empty structs except BogoSorter, SleepSorter, MiracleSorter, VibeSorter, and ThanosSorter which have optional fields.
+
+ThanosSorter and StalinSorter may return a shorter slice than the input.
+
+## Docs
+
+- [pkg.go.dev reference](https://pkg.go.dev/github.com/danielriddell21/sortilege)
+- [README](https://github.com/danielriddell21/sortilege/blob/trunk/README.md)
+- [Examples](https://github.com/danielriddell21/sortilege/blob/trunk/examples/EXAMPLES.md)
+- [Benchmarks](https://github.com/danielriddell21/sortilege/blob/trunk/docs/BENCHMARKS.md)
+- [Complexity chart](https://github.com/danielriddell21/sortilege/blob/trunk/docs/COMPLEXITY.md)
+
+## Algorithms
+
+| Sorter | Time (avg) | Time (worst) | Space |
+|---|---|---|---|
+| BubbleSorter | O(n²) | O(n²) | O(1) |
+| InsertionSorter | O(n²) | O(n²) | O(1) |
+| SelectionSorter | O(n²) | O(n²) | O(1) |
+| CocktailShakerSorter | O(n²) | O(n²) | O(1) |
+| GnomeSorter | O(n²) | O(n²) | O(1) |
+| ShellSorter | O(n²) | O(n²) | O(1) |
+| QuickSorter | O(n log n) | O(n²) | O(log n) |
+| MergeSorter | O(n log n) | O(n log n) | O(n) |
+| HeapSorter | O(n log n) | O(n log n) | O(1) |
+| CountingSorter | O(n+k) | O(n+k) | O(k) |
+| RadixSorter | O(d·(n+k)) | O(d·(n+k)) | O(n+k) |
+| BucketSorter | O(n+k) | O(n²) | O(n+k) |
+| PancakeSorter | O(n²) | O(n²) | O(1) |
+| BogoSorter | O(n·n!) | O(∞) | O(1) |
+| SleepSorter | O(max) | O(max) | O(n) |
+| MiracleSorter | O(∞) | O(∞) | O(1) |
+| ThanosSorter | O(n) | O(n) | O(n) |
+| VibeSorter | O($) | O(☁) | O(☁) |
+| StalinSorter | O(n) | O(n) | O(n) |

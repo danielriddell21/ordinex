@@ -1,7 +1,10 @@
 package sortilege_test
 
 import (
+	"fmt"
 	"math/rand/v2"
+
+	"github.com/danielriddell21/sortilege"
 )
 
 func copyForTest(s []int) []int {
@@ -26,4 +29,21 @@ func randomSlice(n int) []int {
 		s[i] = r.IntN(10000) - 5000
 	}
 	return s
+}
+
+// Every sorter satisfies the Sorter interface, so algorithms are interchangeable.
+func Example() {
+	sorters := []sortilege.Sorter{
+		sortilege.QuickSorter{},
+		sortilege.MergeSorter{},
+		sortilege.HeapSorter{},
+	}
+	input := []int{5, 3, 1, 4, 2}
+	for _, s := range sorters {
+		fmt.Printf("%s: %v\n", s.Name(), s.Sort(input))
+	}
+	// Output:
+	// Quick Sort: [1 2 3 4 5]
+	// Merge Sort: [1 2 3 4 5]
+	// Heap Sort: [1 2 3 4 5]
 }

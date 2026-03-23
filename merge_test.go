@@ -59,3 +59,10 @@ func BenchmarkMergeSort(b *testing.B) {
 		})
 	}
 }
+
+func ExampleMergeSorter() {
+	s := sortilege.MergeSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}
