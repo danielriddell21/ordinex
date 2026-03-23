@@ -47,6 +47,7 @@ type Sorter interface {
 | `SleepSorter` | O(max) | O(max) | O(n) | Goroutine per element |
 | `MiracleSorter` | O(∞) | O(∞) | O(1) | Waits for a cosmic ray |
 | `ThanosSorter` | O(n) | O(n) | O(n) | Eliminates half until sorted |
+| `VibeSorter` | O($) | O(☁) | O(☁) | Sends the array to an LLM. Prays. |
 
 ## Configurable sorters
 
@@ -74,6 +75,15 @@ s := sortilege.SleepSorter{
 ```go
 s := sortilege.MiracleSorter{
     MaxChecks: 1000, // 0 = no limit
+}
+```
+
+### VibeSorter
+
+```go
+s := sortilege.VibeSorter{
+    APIKey: "sk-...",     // if empty, uses OPENAI_API_KEY env var
+    Model:  "gpt-4o",    // if empty, defaults to "gpt-4o-mini"
 }
 ```
 
