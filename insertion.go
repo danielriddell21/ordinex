@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // InsertionSorter implements Insertion Sort.
 // Picks each element and inserts it into its correct position in the sorted portion.

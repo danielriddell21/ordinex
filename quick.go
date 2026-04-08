@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // QuickSorter implements Quick Sort using the Lomuto partition scheme.
 // Selects the last element as pivot and partitions around it.

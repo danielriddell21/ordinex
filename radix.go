@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // RadixSorter implements Radix Sort (LSD, base-10).
 // Sorts numbers by processing digits from least to most significant.

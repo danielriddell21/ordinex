@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestPancakeSort(t *testing.T) {
-	s := sortilege.PancakeSorter{}
+	s := ordinex.PancakeSorter{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestPancakeSort(t *testing.T) {
 }
 
 func BenchmarkPancakeSort(b *testing.B) {
-	s := sortilege.PancakeSorter{}
+	s := ordinex.PancakeSorter{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {

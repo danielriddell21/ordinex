@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestCountingSort(t *testing.T) {
-	s := sortilege.CountingSorter{}
+	s := ordinex.CountingSorter{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestCountingSort(t *testing.T) {
 }
 
 func BenchmarkCountingSort(b *testing.B) {
-	s := sortilege.CountingSorter{}
+	s := ordinex.CountingSorter{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkCountingSort(b *testing.B) {
 }
 
 func ExampleCountingSorter() {
-	s := sortilege.CountingSorter{}
+	s := ordinex.CountingSorter{}
 	fmt.Println(s.Sort([]int{3, 1, 4, 1, 5, 9, 2, 6}))
 	// Output:
 	// [1 1 2 3 4 5 6 9]

@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestShellSort(t *testing.T) {
-	s := sortilege.ShellSorter{}
+	s := ordinex.ShellSorter{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestShellSort(t *testing.T) {
 }
 
 func BenchmarkShellSort(b *testing.B) {
-	s := sortilege.ShellSorter{}
+	s := ordinex.ShellSorter{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {

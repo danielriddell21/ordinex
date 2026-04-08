@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	fmt.Println("=== A&E Triage Queue ===")
 	fmt.Println()
 
-	sorted := sortilege.HeapSorter{}.Sort(scores)
+	sorted := ordinex.HeapSorter{}.Sort(scores)
 
 	urgency := func(score int) string {
 		switch {

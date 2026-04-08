@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 	fmt.Println("=== Employee Directory — Sorted by ID ===")
 	fmt.Println()
 
-	sorted := sortilege.RadixSorter{}.Sort(ids)
+	sorted := ordinex.RadixSorter{}.Sort(ids)
 
 	fmt.Printf("%-10s  %-20s  %s\n", "ID", "Name", "Department")
 	fmt.Println("----------  --------------------  -----------")

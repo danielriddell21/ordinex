@@ -1,11 +1,11 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"os"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestVibeSort(t *testing.T) {
@@ -13,7 +13,7 @@ func TestVibeSort(t *testing.T) {
 		t.Skip("OPENAI_API_KEY not set — skipping live API tests")
 	}
 
-	s := sortilege.VibeSorter{}
+	s := ordinex.VibeSorter{}
 
 	t.Run("empty", func(t *testing.T) {
 		got := s.Sort([]int{})
@@ -70,7 +70,7 @@ func BenchmarkVibeSort(b *testing.B) {
 	if os.Getenv("OPENAI_API_KEY") == "" {
 		b.Skip("OPENAI_API_KEY not set")
 	}
-	s := sortilege.VibeSorter{}
+	s := ordinex.VibeSorter{}
 	data := randomSlice(10)
 	b.Run("n=10", func(b *testing.B) {
 		for b.Loop() {

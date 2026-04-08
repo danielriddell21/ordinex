@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"math/rand/v2"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestThanosSort(t *testing.T) {
 	r := rand.New(rand.NewPCG(99, 0))
-	s := sortilege.ThanosSorter{Rand: r}
+	s := ordinex.ThanosSorter{Rand: r}
 
 	t.Run("empty", func(t *testing.T) {
 		got := s.Sort([]int{})
@@ -53,7 +53,7 @@ func TestThanosSort(t *testing.T) {
 
 func BenchmarkThanosSort(b *testing.B) {
 	r := rand.New(rand.NewPCG(42, 0))
-	s := sortilege.ThanosSorter{Rand: r}
+	s := ordinex.ThanosSorter{Rand: r}
 	data := []int{3, 1, 2, 4, 5}
 	b.Run("n=5", func(b *testing.B) {
 		for b.Loop() {

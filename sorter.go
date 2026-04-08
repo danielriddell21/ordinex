@@ -1,9 +1,9 @@
-// Package sortilege provides a collection of sorting algorithm implementations.
+// Package ordinex provides a collection of sorting algorithm implementations.
 //
 // All implementations satisfy the Sorter interface. Most return a slice of the
 // same length as the input. ThanosSorter and StalinSorter are exceptions — they
 // may return a shorter slice as elements are eliminated during sorting.
-package sortilege
+package ordinex
 
 // Sorter is implemented by every sorting algorithm in this package.
 type Sorter interface {

@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // PancakeSorter implements Pancake Sort.
 // Repeatedly finds the maximum element and uses flips to move it to its correct position,

@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // BucketSorter implements Bucket Sort.
 // Distributes elements into buckets based on value range, sorts each bucket

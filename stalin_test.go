@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestStalinSort(t *testing.T) {
-	s := sortilege.StalinSorter{}
+	s := ordinex.StalinSorter{}
 
 	cases := []struct {
 		name  string
@@ -48,7 +48,7 @@ func TestStalinSort(t *testing.T) {
 }
 
 func BenchmarkStalinSort(b *testing.B) {
-	s := sortilege.StalinSorter{}
+	s := ordinex.StalinSorter{}
 	data := randomSlice(1000)
 	b.Run("n=1000", func(b *testing.B) {
 		for b.Loop() {
@@ -60,7 +60,7 @@ func BenchmarkStalinSort(b *testing.B) {
 // StalinSorter removes any element smaller than the running maximum.
 // The returned slice is sorted but may be shorter than the input.
 func ExampleStalinSorter() {
-	s := sortilege.StalinSorter{}
+	s := ordinex.StalinSorter{}
 	fmt.Println(s.Sort([]int{3, 1, 4, 1, 5, 9, 2, 6}))
 	// Output:
 	// [3 4 5 9]

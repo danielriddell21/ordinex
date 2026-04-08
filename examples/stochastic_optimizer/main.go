@@ -14,7 +14,7 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 	fmt.Println("(MaxAttempts capped at 100,000 for SLA compliance)")
 	fmt.Println()
 
-	sorter := sortilege.BogoSorter{
+	sorter := ordinex.BogoSorter{
 		MaxAttempts: 100_000,
 		Rand:        rand.New(rand.NewPCG(42, 0)),
 	}

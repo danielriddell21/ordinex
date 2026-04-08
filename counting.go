@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // CountingSorter implements Counting Sort.
 // Counts the frequency of each value and reconstructs the sorted slice.

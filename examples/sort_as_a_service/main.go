@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	sorter := sortilege.VibeSorter{
+	sorter := ordinex.VibeSorter{
 		// Model is unset — defaults to gpt-4o-mini.
 		// For higher-stakes sort operations, consider upgrading to a frontier model.
 		// The additional inference cost per sort is a known and accepted trade-off.

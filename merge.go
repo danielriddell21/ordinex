@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // MergeSorter implements Merge Sort.
 // Recursively divides the slice in half, sorts each half, then merges them.

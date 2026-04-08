@@ -34,7 +34,7 @@ func (MySorter) Sort(input []int) []int {
 }
 ```
 
-2. Create `<name>_test.go` in package `sortilege_test`. Use the shared helpers from `sorter_test.go` (`copyForTest`, `isSortedTest`, `randomSlice`). Include at minimum: empty input, single element, already sorted, unsorted, and a random-slice test. Add a benchmark.
+2. Create `<name>_test.go` in package `ordinex_test`. Use the shared helpers from `sorter_test.go` (`copyForTest`, `isSortedTest`, `randomSlice`). Include at minimum: empty input, single element, already sorted, unsorted, and a random-slice test. Add a benchmark.
 
 3. Add an example in `examples/<scenario>/main.go`. Keep it runnable with `go run`. See existing examples for tone and structure.
 

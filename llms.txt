@@ -1,8 +1,8 @@
-# sortilege
+# ordinex
 
 > A Go library providing 19 sorting algorithm implementations behind a single `Sorter` interface. One interface. No sacrifices required.
 
-sortilege is importable as `github.com/danielriddell21/sortilege`. It has no external dependencies.
+ordinex is importable as `github.com/danielriddell21/ordinex`. It has no external dependencies.
 
 The central interface:
 
@@ -19,11 +19,11 @@ ThanosSorter and StalinSorter may return a shorter slice than the input.
 
 ## Docs
 
-- [pkg.go.dev reference](https://pkg.go.dev/github.com/danielriddell21/sortilege)
-- [README](https://github.com/danielriddell21/sortilege/blob/trunk/README.md)
-- [Examples](https://github.com/danielriddell21/sortilege/blob/trunk/examples/EXAMPLES.md)
-- [Benchmarks](https://github.com/danielriddell21/sortilege/blob/trunk/docs/BENCHMARKS.md)
-- [Complexity chart](https://github.com/danielriddell21/sortilege/blob/trunk/docs/COMPLEXITY.md)
+- [pkg.go.dev reference](https://pkg.go.dev/github.com/danielriddell21/ordinex)
+- [README](https://github.com/danielriddell21/ordinex/blob/trunk/README.md)
+- [Examples](https://github.com/danielriddell21/ordinex/blob/trunk/examples/EXAMPLES.md)
+- [Benchmarks](https://github.com/danielriddell21/ordinex/blob/trunk/docs/BENCHMARKS.md)
+- [Complexity chart](https://github.com/danielriddell21/ordinex/blob/trunk/docs/COMPLEXITY.md)
 
 ## Algorithms
 

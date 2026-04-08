@@ -9,7 +9,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 	fmt.Println("=== Application Log — Chronological View ===")
 	fmt.Println()
 
-	sorted := sortilege.ShellSorter{}.Sort(timestamps)
+	sorted := ordinex.ShellSorter{}.Sort(timestamps)
 
 	fmt.Printf("%-12s  %-7s  %s\n", "Timestamp", "Level", "Message")
 	fmt.Println("------------  -------  -------------------------------")

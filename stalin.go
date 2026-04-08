@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // StalinSorter implements Stalin Sort.
 // Scans the slice once and keeps only elements that are greater than or equal

@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // ShellSorter implements Shell Sort.
 // An optimisation of Insertion Sort that exchanges far-apart elements first.

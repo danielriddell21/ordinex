@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 	fmt.Println("=== Bargain Finder — Cheapest Items ===")
 	fmt.Println()
 
-	sorted := sortilege.SelectionSorter{}.Sort(prices)
+	sorted := ordinex.SelectionSorter{}.Sort(prices)
 
 	fmt.Printf("%-22s  %s\n", "Item", "Price")
 	fmt.Println("----------------------  -----")

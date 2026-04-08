@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestRadixSort(t *testing.T) {
-	s := sortilege.RadixSorter{}
+	s := ordinex.RadixSorter{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestRadixSort(t *testing.T) {
 }
 
 func BenchmarkRadixSort(b *testing.B) {
-	s := sortilege.RadixSorter{}
+	s := ordinex.RadixSorter{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkRadixSort(b *testing.B) {
 }
 
 func ExampleRadixSorter() {
-	s := sortilege.RadixSorter{}
+	s := ordinex.RadixSorter{}
 	fmt.Println(s.Sort([]int{170, 45, 75, 90, 802, 24, 2, 66}))
 	// Output:
 	// [2 24 45 66 75 90 170 802]

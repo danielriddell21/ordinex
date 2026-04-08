@@ -1,17 +1,17 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"testing"
 	"time"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestSleepSort(t *testing.T) {
 	if testing.Short() {
 		t.Skip("skipping Sleep Sort test in short mode")
 	}
-	s := sortilege.SleepSorter{ScaleFactor: time.Millisecond}
+	s := ordinex.SleepSorter{ScaleFactor: time.Millisecond}
 	// Only test with small positive inputs; Sleep Sort is non-deterministic with duplicates.
 	cases := [][]int{
 		{},
@@ -32,7 +32,7 @@ func TestSleepSort(t *testing.T) {
 }
 
 func BenchmarkSleepSort(b *testing.B) {
-	s := sortilege.SleepSorter{ScaleFactor: time.Millisecond}
+	s := ordinex.SleepSorter{ScaleFactor: time.Millisecond}
 	data := []int{5, 2, 8, 1, 3, 9, 4, 7, 6, 10}
 	b.Run("n=10", func(b *testing.B) {
 		for b.Loop() {

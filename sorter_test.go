@@ -1,10 +1,10 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"math/rand/v2"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func copyForTest(s []int) []int {
@@ -33,10 +33,10 @@ func randomSlice(n int) []int {
 
 // Every sorter satisfies the Sorter interface, so algorithms are interchangeable.
 func Example() {
-	sorters := []sortilege.Sorter{
-		sortilege.QuickSorter{},
-		sortilege.MergeSorter{},
-		sortilege.HeapSorter{},
+	sorters := []ordinex.Sorter{
+		ordinex.QuickSorter{},
+		ordinex.MergeSorter{},
+		ordinex.HeapSorter{},
 	}
 	input := []int{5, 3, 1, 4, 2}
 	for _, s := range sorters {

@@ -1,6 +1,6 @@
 # Complexity
 
-Visual comparison of all 19 sorting algorithms in sortilege.
+Visual comparison of all 19 sorting algorithms in ordinex.
 
 **Scale** — Big-O classes mapped to an ordinal axis:
 

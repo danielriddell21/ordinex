@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -35,7 +35,7 @@ func main() {
 	fmt.Println("=== Playlist — Sorted by Duration ===")
 	fmt.Println()
 
-	sorted := sortilege.GnomeSorter{}.Sort(durations)
+	sorted := ordinex.GnomeSorter{}.Sort(durations)
 
 	fmt.Printf("%-3s  %-30s  %s\n", "#", "Title", "Duration")
 	fmt.Println("---  ------------------------------  --------")

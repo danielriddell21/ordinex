@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // CocktailShakerSorter implements Cocktail Shaker Sort (bidirectional Bubble Sort).
 // Each pass alternates direction, shrinking the unsorted region from both ends.

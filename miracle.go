@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // MiracleSorter implements Miracle Sort.
 // Checks if the slice is sorted. If not, it waits for a cosmic ray to flip a bit

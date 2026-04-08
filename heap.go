@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // HeapSorter implements Heap Sort.
 // Builds a max-heap, then repeatedly extracts the root to produce a sorted slice.

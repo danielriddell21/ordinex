@@ -1,6 +1,6 @@
 # Examples
 
-Runnable examples for every sorting algorithm in sortilege.
+Runnable examples for every sorting algorithm in ordinex.
 
 ```sh
 go run examples/<name>/main.go

@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 import (
 	"math/rand/v2"

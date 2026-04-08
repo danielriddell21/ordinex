@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -33,7 +33,7 @@ func main() {
 	fmt.Println("=== Weekly Leaderboard ===")
 	fmt.Println()
 
-	sorted := sortilege.BubbleSorter{}.Sort(scores)
+	sorted := ordinex.BubbleSorter{}.Sort(scores)
 
 	// Rebuild the leaderboard in descending order.
 	fmt.Printf("%-5s %-10s %s\n", "Rank", "Player", "Score")

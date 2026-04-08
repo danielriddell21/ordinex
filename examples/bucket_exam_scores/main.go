@@ -7,7 +7,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -20,7 +20,7 @@ func main() {
 	fmt.Println()
 	fmt.Printf("Raw scores: %v\n\n", scores)
 
-	sorted := sortilege.BucketSorter{}.Sort(scores)
+	sorted := ordinex.BucketSorter{}.Sort(scores)
 
 	fmt.Printf("Sorted:     %v\n\n", sorted)
 

@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // BubbleSorter implements Bubble Sort.
 // Repeatedly swaps adjacent elements that are out of order.

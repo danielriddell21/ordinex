@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 	}
 	fmt.Println()
 
-	sorted := sortilege.InsertionSorter{}.Sort(values)
+	sorted := ordinex.InsertionSorter{}.Sort(values)
 
 	fmt.Print("Sorted: ")
 	for _, v := range sorted {

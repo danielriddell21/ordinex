@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // GnomeSorter implements Gnome Sort (also known as Stupid Sort).
 // Moves each element to its correct position by a series of adjacent swaps,

@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -24,7 +24,7 @@ func main() {
 	fmt.Printf("South region (%d orders): %v\n", len(southRegion), southRegion)
 	fmt.Println()
 
-	sorted := sortilege.MergeSorter{}.Sort(combined)
+	sorted := ordinex.MergeSorter{}.Sort(combined)
 
 	fmt.Printf("Combined     (%d orders): %v\n\n", len(sorted), sorted)
 

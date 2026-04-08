@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 	"strings"
 )
 
@@ -30,7 +30,7 @@ func main() {
 
 	draw(stack, "Before (as served):")
 
-	sorted := sortilege.PancakeSorter{}.Sort(stack)
+	sorted := ordinex.PancakeSorter{}.Sort(stack)
 
 	// Reverse for display: largest at bottom.
 	display := make([]int, len(sorted))

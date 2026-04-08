@@ -1,26 +1,26 @@
-# sortilege
+# ordinex
 
 *n.* divination by drawing lots. Also: making your slices behave.
 
 One interface. No sacrifices required.
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/danielriddell21/sortilege.svg)](https://pkg.go.dev/github.com/danielriddell21/sortilege)
-[![CI](https://github.com/danielriddell21/sortilege/actions/workflows/ci.yml/badge.svg)](https://github.com/danielriddell21/sortilege/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/danielriddell21/ordinex.svg)](https://pkg.go.dev/github.com/danielriddell21/ordinex)
+[![CI](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yml/badge.svg)](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yml)
 [![Go 1.25](https://img.shields.io/badge/go-1.25-blue)](https://go.dev)
 [![MIT License](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 
 ## Installation
 
 ```sh
-go get github.com/danielriddell21/sortilege@latest
+go get github.com/danielriddell21/ordinex@latest
 ```
 
 ## Quick start
 
 ```go
-import "github.com/danielriddell21/sortilege"
+import "github.com/danielriddell21/ordinex"
 
-s := sortilege.MergeSorter{}
+s := ordinex.MergeSorter{}
 sorted := s.Sort([]int{5, 3, 1, 4, 2})
 // sorted == [1 2 3 4 5], original is unchanged
 fmt.Println(s.Name()) // "Merge Sort"
@@ -69,7 +69,7 @@ Most sorters are empty structs and need no configuration. A few have fields:
 ### BogoSorter
 
 ```go
-s := sortilege.BogoSorter{
+s := ordinex.BogoSorter{
     MaxAttempts: 1000,                        // 0 = unlimited
     Rand:        rand.New(rand.NewPCG(42, 0)), // nil = seeded from time
 }
@@ -78,7 +78,7 @@ s := sortilege.BogoSorter{
 ### SleepSorter
 
 ```go
-s := sortilege.SleepSorter{
+s := ordinex.SleepSorter{
     ScaleFactor: 10 * time.Millisecond, // sleep per unit of value; default 1ms
 }
 ```
@@ -86,7 +86,7 @@ s := sortilege.SleepSorter{
 ### MiracleSorter
 
 ```go
-s := sortilege.MiracleSorter{
+s := ordinex.MiracleSorter{
     MaxChecks: 1000, // 0 = no limit
 }
 ```
@@ -94,7 +94,7 @@ s := sortilege.MiracleSorter{
 ### VibeSorter
 
 ```go
-s := sortilege.VibeSorter{
+s := ordinex.VibeSorter{
     APIKey: "sk-...",     // if empty, uses OPENAI_API_KEY env var
     Model:  "gpt-4o",    // if empty, defaults to "gpt-4o-mini"
 }
@@ -103,7 +103,7 @@ s := sortilege.VibeSorter{
 ### ThanosSorter
 
 ```go
-s := sortilege.ThanosSorter{
+s := ordinex.ThanosSorter{
     Rand: rand.New(rand.NewPCG(42, 0)), // nil = seeded from time
 }
 ```

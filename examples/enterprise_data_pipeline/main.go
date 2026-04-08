@@ -13,7 +13,7 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 	fmt.Println()
 
 	// ThanosSorter is configured with a fixed seed for reproducible data loss.
-	sorter := sortilege.ThanosSorter{
+	sorter := ordinex.ThanosSorter{
 		Rand: rand.New(rand.NewPCG(99, 0)),
 	}
 

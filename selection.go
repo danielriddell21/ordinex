@@ -1,4 +1,4 @@
-package sortilege
+package ordinex
 
 // SelectionSorter implements Selection Sort.
 // Repeatedly finds the minimum element in the unsorted portion and moves it to the front.

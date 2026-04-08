@@ -1,15 +1,15 @@
-package sortilege_test
+package ordinex_test
 
 import (
 	"fmt"
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func TestInsertionSort(t *testing.T) {
-	s := sortilege.InsertionSorter{}
+	s := ordinex.InsertionSorter{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestInsertionSort(t *testing.T) {
 }
 
 func BenchmarkInsertionSort(b *testing.B) {
-	s := sortilege.InsertionSorter{}
+	s := ordinex.InsertionSorter{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkInsertionSort(b *testing.B) {
 }
 
 func ExampleInsertionSorter() {
-	s := sortilege.InsertionSorter{}
+	s := ordinex.InsertionSorter{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]

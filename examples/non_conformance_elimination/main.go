@@ -14,7 +14,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 	fmt.Println("Non-conforming values (below running maximum) will be purged.")
 	fmt.Println()
 
-	sorter := sortilege.StalinSorter{}
+	sorter := ordinex.StalinSorter{}
 	result := sorter.Sort(monthlyActiveUsers)
 
 	eliminated := len(monthlyActiveUsers) - len(result)

@@ -11,7 +11,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/sortilege"
+	"github.com/danielriddell21/ordinex"
 	"time"
 )
 
@@ -32,7 +32,7 @@ func main() {
 
 	start := time.Now()
 
-	sorter := sortilege.SleepSorter{
+	sorter := ordinex.SleepSorter{
 		// Each unit of value sleeps for 10ms.
 		// Increasing this improves accuracy at the cost of your afternoon.
 		ScaleFactor: 10 * time.Millisecond,
