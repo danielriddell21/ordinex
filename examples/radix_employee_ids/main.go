@@ -1,4 +1,4 @@
-// Package main sorts employee IDs using Radix Sort.
+// Command radix_employee_ids sorts employee IDs using Radix Sort.
 //
 // Radix Sort achieves O(d*(n+k)) time — effectively linear for fixed-width
 // integers — by sorting digit by digit rather than comparing whole values.

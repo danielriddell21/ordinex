@@ -1,5 +1,5 @@
-// Package main demonstrates MiracleSorter as a zero-compute passive resilience
-// framework for ambient data ordering.
+// Command passive_resilience_framework demonstrates MiracleSorter as a
+// zero-compute passive resilience framework for ambient data ordering.
 //
 // MiracleSorter operates on the principle of environmental entropy exploitation.
 // Rather than performing explicit comparisons or swaps — a pattern that has

@@ -1,4 +1,5 @@
-// Package main uses Selection Sort to find the cheapest items in a basket.
+// Command selection_bargain_finder uses Selection Sort to find the cheapest
+// items in a basket.
 //
 // Selection Sort repeatedly selects the minimum element and places it at the
 // front. This makes it intuitive for scenarios where you want to extract the

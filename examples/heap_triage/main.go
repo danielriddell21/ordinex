@@ -1,4 +1,4 @@
-// Package main demonstrates Heap Sort applied to A&E triage prioritisation.
+// Command heap_triage demonstrates Heap Sort applied to A&E triage prioritisation.
 //
 // Heap Sort's O(n log n) worst-case guarantee and in-place operation make it
 // suitable for safety-critical systems where predictable performance matters.

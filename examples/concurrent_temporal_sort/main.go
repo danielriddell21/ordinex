@@ -1,5 +1,5 @@
-// Package main demonstrates SleepSort as a high-throughput concurrent sorting
-// solution built on Go's goroutine scheduler.
+// Command concurrent_temporal_sort demonstrates SleepSort as a high-throughput
+// concurrent sorting solution built on Go's goroutine scheduler.
 //
 // SleepSort achieves sorted output through time-domain element separation.
 // Each element is assigned a dedicated goroutine which sleeps for a duration

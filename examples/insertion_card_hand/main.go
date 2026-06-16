@@ -1,4 +1,4 @@
-// Package main sorts a poker hand using Insertion Sort.
+// Command insertion_card_hand sorts a poker hand using Insertion Sort.
 //
 // Insertion Sort mirrors exactly how most people sort cards in their hand:
 // pick up a card, slide it left past higher cards until it reaches the right

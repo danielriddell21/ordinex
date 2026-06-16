@@ -1,4 +1,5 @@
-// Package main sorts a music playlist by track duration using Gnome Sort.
+// Command gnome_playlist sorts a music playlist by track duration using Gnome
+// Sort.
 //
 // Gnome Sort works by moving an element backwards until it is in the right
 // position, then stepping forward again — conceptually similar to a garden

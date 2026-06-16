@@ -1,4 +1,5 @@
-// Package main sorts network round-trip times using Cocktail Shaker Sort.
+// Command cocktail_network_latency sorts network round-trip times using Cocktail
+// Shaker Sort.
 //
 // Cocktail Shaker Sort is a bidirectional variant of Bubble Sort. It handles
 // sequences where small values are clustered at the high end ("turtles") more

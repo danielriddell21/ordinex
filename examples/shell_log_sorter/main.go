@@ -1,4 +1,5 @@
-// Package main sorts application log entries by timestamp using Shell Sort.
+// Command shell_log_sorter sorts application log entries by timestamp using Shell
+// Sort.
 //
 // Shell Sort generalises Insertion Sort by first sorting elements far apart,
 // progressively reducing the gap. This eliminates long-distance disorder

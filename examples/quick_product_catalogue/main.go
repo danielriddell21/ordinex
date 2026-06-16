@@ -1,4 +1,5 @@
-// Package main sorts a product catalogue by price using Quick Sort.
+// Command quick_product_catalogue sorts a product catalogue by price using Quick
+// Sort.
 //
 // Quick Sort's average O(n log n) performance and cache-friendly in-place
 // partitioning make it a practical default for general-purpose sorting.

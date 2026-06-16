@@ -1,4 +1,4 @@
-// Package main tallies a survey using Counting Sort.
+// Command counting_vote_tally tallies a survey using Counting Sort.
 //
 // Counting Sort is optimal when values fall within a small, known integer
 // range — here, satisfaction ratings from 1 to 5. The algorithm runs in
