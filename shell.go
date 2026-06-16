@@ -1,13 +1,18 @@
 package ordinex
 
-// ShellSorter implements Shell Sort.
-// An optimisation of Insertion Sort that exchanges far-apart elements first.
-// Uses a gap sequence starting at n/2, halved each iteration.
-// Time: O(n²)  Space: O(1)
+// ShellSorter implements Shell Sort, an optimisation of Insertion Sort that
+// exchanges far-apart elements first. It uses a gap sequence starting at n/2 and
+// halved on each iteration.
+//
+// The zero value is ready to use.
+//
+// Time: O(n²). Space: O(1).
 type ShellSorter struct{}
 
+// Name returns the algorithm's name, "Shell Sort".
 func (ShellSorter) Name() string { return "Shell Sort" }
 
+// Sort returns a sorted copy of input using Shell Sort. The input is not modified.
 func (ShellSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	n := len(arr)

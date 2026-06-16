@@ -1,17 +1,21 @@
 package ordinex
 
-// StalinSorter implements Stalin Sort.
-// Scans the slice once and keeps only elements that are greater than or equal
-// to the current maximum. Any element smaller than the running maximum is
-// removed from the dataset. Permanently. No appeal process.
+// StalinSorter implements Stalin Sort. It scans the slice once and keeps only
+// elements that are greater than or equal to the running maximum. Any element
+// smaller than the running maximum is removed from the dataset. Permanently. No
+// appeal process.
 //
-// The returned slice is guaranteed to be sorted, but may be shorter than the input.
+// The zero value is ready to use.
 //
-// Time: O(n)  Space: O(n)
+// Time: O(n). Space: O(n).
 type StalinSorter struct{}
 
+// Name returns the algorithm's name, "Stalin Sort".
 func (StalinSorter) Name() string { return "Stalin Sort" }
 
+// Sort returns the elements of input that are in non-decreasing order, dropping
+// any element smaller than the running maximum. The result is always sorted but
+// may be shorter than input, which is not modified.
 func (StalinSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}

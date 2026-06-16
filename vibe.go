@@ -8,18 +8,28 @@ import (
 	"os"
 )
 
-// VibeSorter implements Vibe Sort.
-// Sends the slice to a Large Language Model and prays it doesn't hallucinate the output.
-// If the API call fails or the model returns nonsense, the original slice is returned unsorted.
+// VibeSorter implements Vibe Sort. It sends the slice to a Large Language Model
+// and trusts that the model returns it in order. If the API call fails or the
+// model returns something that cannot be parsed, the original slice is returned
+// unsorted.
 //
-// Time: O($)  Space: O(☁)
+// Time: O($). Space: O(☁).
 type VibeSorter struct {
-	APIKey string // if empty, uses OPENAI_API_KEY env var
-	Model  string // if empty, defaults to "gpt-4o-mini"
+	// APIKey is the OpenAI API key. If empty, the OPENAI_API_KEY environment
+	// variable is used.
+	APIKey string
+
+	// Model is the model name to query. If empty, it defaults to "gpt-4o-mini".
+	Model string
 }
 
+// Name returns the algorithm's name, "Vibe Sort".
 func (VibeSorter) Name() string { return "Vibe Sort" }
 
+// Sort returns input sorted by a Large Language Model. The input is not
+// modified. If the request fails, the response cannot be parsed, or input has
+// fewer than two elements, a copy of input is returned unchanged. The result is
+// whatever the model produces and is not guaranteed to be sorted.
 func (v VibeSorter) Sort(input []int) []int {
 	out := copySlice(input)
 	if len(out) <= 1 {

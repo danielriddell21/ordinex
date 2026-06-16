@@ -48,6 +48,13 @@ func TestBucketSort(t *testing.T) {
 	})
 }
 
+func ExampleBucketSorter() {
+	s := ordinex.BucketSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}
+
 func BenchmarkBucketSort(b *testing.B) {
 	s := ordinex.BucketSorter{}
 	for _, size := range []int{100, 1000, 10000} {

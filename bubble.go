@@ -1,13 +1,17 @@
 package ordinex
 
-// BubbleSorter implements Bubble Sort.
-// Repeatedly swaps adjacent elements that are out of order.
-// Stops early if no swaps occur in a full pass.
-// Time: O(n²)  Space: O(1)
+// BubbleSorter implements Bubble Sort. It repeatedly swaps adjacent elements
+// that are out of order, stopping early once a full pass makes no swaps.
+//
+// The zero value is ready to use.
+//
+// Time: O(n²). Space: O(1).
 type BubbleSorter struct{}
 
+// Name returns the algorithm's name, "Bubble Sort".
 func (BubbleSorter) Name() string { return "Bubble Sort" }
 
+// Sort returns a sorted copy of input using Bubble Sort. The input is not modified.
 func (BubbleSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	n := len(arr)

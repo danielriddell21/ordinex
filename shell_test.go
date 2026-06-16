@@ -48,6 +48,13 @@ func TestShellSort(t *testing.T) {
 	})
 }
 
+func ExampleShellSorter() {
+	s := ordinex.ShellSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}
+
 func BenchmarkShellSort(b *testing.B) {
 	s := ordinex.ShellSorter{}
 	for _, size := range []int{100, 1000, 10000} {

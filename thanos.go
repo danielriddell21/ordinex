@@ -5,18 +5,23 @@ import (
 	"time"
 )
 
-// ThanosSorter implements Thanos Sort.
-// Checks if the slice is sorted. If not, it randomly eliminates half the elements
-// and checks again. Repeats until the remaining elements happen to be sorted.
-// The returned slice may be shorter than the input.
+// ThanosSorter implements Thanos Sort. It checks whether the slice is sorted
+// and, if not, randomly eliminates half the elements and checks again, repeating
+// until the survivors happen to be sorted.
 //
-// Rand is the random source; if nil, one is seeded from the current time.
+// Time: O(n). Space: O(n).
 type ThanosSorter struct {
+	// Rand is the random source used to choose which elements survive. If nil, a
+	// source seeded from the current time is used.
 	Rand *rand.Rand
 }
 
+// Name returns the algorithm's name, "Thanos Sort".
 func (t ThanosSorter) Name() string { return "Thanos Sort" }
 
+// Sort returns a sorted subsequence of input. The input is not modified. The
+// result is always sorted but may be shorter than input, since elements are
+// discarded until the remainder is in order.
 func (t ThanosSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	r := t.Rand

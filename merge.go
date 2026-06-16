@@ -1,12 +1,17 @@
 package ordinex
 
-// MergeSorter implements Merge Sort.
-// Recursively divides the slice in half, sorts each half, then merges them.
-// Time: O(n log n)  Space: O(n)
+// MergeSorter implements Merge Sort. It recursively divides the slice in half,
+// sorts each half, then merges the two sorted halves.
+//
+// The zero value is ready to use.
+//
+// Time: O(n log n). Space: O(n).
 type MergeSorter struct{}
 
+// Name returns the algorithm's name, "Merge Sort".
 func (MergeSorter) Name() string { return "Merge Sort" }
 
+// Sort returns a sorted copy of input using Merge Sort. The input is not modified.
 func (MergeSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	return mergeSort(arr)

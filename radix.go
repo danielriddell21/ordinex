@@ -1,13 +1,19 @@
 package ordinex
 
-// RadixSorter implements Radix Sort (LSD, base-10).
-// Sorts numbers by processing digits from least to most significant.
-// Handles negative integers by sorting negatives and non-negatives separately.
-// Time: O(d*(n+k))  Space: O(n+k)  where d = digits, k = 10
+// RadixSorter implements Radix Sort, least-significant-digit first in base 10.
+// It sorts numbers by processing their digits from least to most significant.
+// Negative integers are handled by sorting the negatives and non-negatives
+// separately and recombining them.
+//
+// The zero value is ready to use.
+//
+// Time: O(d*(n+k)). Space: O(n+k), where d = digits and k = 10.
 type RadixSorter struct{}
 
+// Name returns the algorithm's name, "Radix Sort".
 func (RadixSorter) Name() string { return "Radix Sort" }
 
+// Sort returns a sorted copy of input using Radix Sort. The input is not modified.
 func (RadixSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}
