@@ -1,4 +1,5 @@
-// Package main combines two pre-sorted regional sales reports using Merge Sort.
+// Command merge_sales_reports combines two pre-sorted regional sales reports
+// using Merge Sort.
 //
 // Merge Sort's divide-and-conquer structure maps naturally onto scenarios where
 // data arrives in sorted partitions — such as independently sorted reports from

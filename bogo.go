@@ -5,20 +5,28 @@ import (
 	"time"
 )
 
-// BogoSorter implements Bogo Sort (also known as Permutation Sort or Stupid Sort).
-// Repeatedly shuffles the slice at random until it happens to be sorted.
-// This is highly inefficient and is included for educational/humour purposes only.
+// BogoSorter implements Bogo Sort, also known as Permutation Sort or Stupid
+// Sort. It repeatedly shuffles the slice at random until it happens to be
+// sorted. It is wildly inefficient and is included for educational and
+// entertainment purposes only.
 //
-// MaxAttempts caps the number of shuffle attempts (0 = unlimited, dangerous).
-// Rand is the random source; if nil, one is seeded from the current time.
-// Time: O(n × n!)  Space: O(1)
+// Time: O(n × n!). Space: O(1).
 type BogoSorter struct {
+	// MaxAttempts caps the number of shuffle attempts. A value of 0 means
+	// unlimited, which on all but the smallest inputs may never terminate.
 	MaxAttempts int
-	Rand        *rand.Rand
+
+	// Rand is the random source used to shuffle. If nil, a source seeded from
+	// the current time is used.
+	Rand *rand.Rand
 }
 
+// Name returns the algorithm's name, "Bogo Sort".
 func (b BogoSorter) Name() string { return "Bogo Sort" }
 
+// Sort returns a sorted copy of input using Bogo Sort. The input is not
+// modified. If MaxAttempts is reached before the slice becomes sorted, the
+// partially shuffled result is returned as is.
 func (b BogoSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	r := b.Rand

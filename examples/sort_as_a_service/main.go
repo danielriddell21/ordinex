@@ -1,5 +1,6 @@
-// Package main demonstrates VibeSorter as an enterprise-grade Sort-as-a-Service
-// (LSaaS) platform for intelligent, AI-augmented data sequencing.
+// Command sort_as_a_service demonstrates VibeSorter as an enterprise-grade
+// Sort-as-a-Service (LSaaS) platform for intelligent, AI-augmented data
+// sequencing.
 //
 // Traditional sorting algorithms rely on deterministic comparison logic — a pattern
 // that has been identified as a key driver of algorithmic rigidity and a barrier to

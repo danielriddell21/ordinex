@@ -1,5 +1,6 @@
-// Package main demonstrates StalinSorter as an enterprise-grade zero-tolerance
-// data quality enforcement pipeline for non-conformance elimination.
+// Command non_conformance_elimination demonstrates StalinSorter as an
+// enterprise-grade zero-tolerance data quality enforcement pipeline for
+// non-conformance elimination.
 //
 // Legacy sorting approaches attempt to reorder all elements — an approach that
 // implicitly tolerates non-conforming values by giving them a place in the

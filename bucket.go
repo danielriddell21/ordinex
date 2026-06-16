@@ -1,13 +1,18 @@
 package ordinex
 
-// BucketSorter implements Bucket Sort.
-// Distributes elements into buckets based on value range, sorts each bucket
-// with insertion sort, then concatenates the results.
-// Time: O(n+k)  Space: O(n+k)
+// BucketSorter implements Bucket Sort. It distributes elements into buckets
+// based on their value range, sorts each bucket with insertion sort, then
+// concatenates the buckets in order.
+//
+// The zero value is ready to use.
+//
+// Time: O(n+k) average, O(n²) worst. Space: O(n+k).
 type BucketSorter struct{}
 
+// Name returns the algorithm's name, "Bucket Sort".
 func (BucketSorter) Name() string { return "Bucket Sort" }
 
+// Sort returns a sorted copy of input using Bucket Sort. The input is not modified.
 func (BucketSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}

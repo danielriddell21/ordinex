@@ -1,12 +1,17 @@
 package ordinex
 
-// SelectionSorter implements Selection Sort.
-// Repeatedly finds the minimum element in the unsorted portion and moves it to the front.
-// Time: O(n²)  Space: O(1)
+// SelectionSorter implements Selection Sort. It repeatedly finds the minimum
+// element in the unsorted portion and moves it to the front.
+//
+// The zero value is ready to use.
+//
+// Time: O(n²). Space: O(1).
 type SelectionSorter struct{}
 
+// Name returns the algorithm's name, "Selection Sort".
 func (SelectionSorter) Name() string { return "Selection Sort" }
 
+// Sort returns a sorted copy of input using Selection Sort. The input is not modified.
 func (SelectionSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	n := len(arr)

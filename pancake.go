@@ -1,13 +1,18 @@
 package ordinex
 
-// PancakeSorter implements Pancake Sort.
-// Repeatedly finds the maximum element and uses flips to move it to its correct position,
-// similar to sorting pancakes with a spatula.
-// Time: O(n²)  Space: O(1)
+// PancakeSorter implements Pancake Sort. It repeatedly finds the maximum element
+// and uses prefix flips to move it into place, much like sorting a stack of
+// pancakes with a spatula.
+//
+// The zero value is ready to use.
+//
+// Time: O(n²). Space: O(1).
 type PancakeSorter struct{}
 
+// Name returns the algorithm's name, "Pancake Sort".
 func (PancakeSorter) Name() string { return "Pancake Sort" }
 
+// Sort returns a sorted copy of input using Pancake Sort. The input is not modified.
 func (PancakeSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	for size := len(arr); size > 1; size-- {

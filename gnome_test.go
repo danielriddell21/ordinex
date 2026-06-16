@@ -48,6 +48,13 @@ func TestGnomeSort(t *testing.T) {
 	})
 }
 
+func ExampleGnomeSorter() {
+	s := ordinex.GnomeSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}
+
 func BenchmarkGnomeSort(b *testing.B) {
 	s := ordinex.GnomeSorter{}
 	for _, size := range []int{100, 1000, 10000} {

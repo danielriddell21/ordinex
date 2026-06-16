@@ -5,20 +5,25 @@ import (
 	"time"
 )
 
-// SleepSorter implements Sleep Sort.
-// Launches a goroutine per element; each goroutine sleeps for a duration
-// proportional to its value, then appends to the result. Elements with smaller
-// values wake earlier and appear first.
+// SleepSorter implements Sleep Sort. It launches one goroutine per element; each
+// goroutine sleeps for a duration proportional to its value and then appends
+// itself to the result, so smaller values wake earlier and appear first.
 //
-// ScaleFactor controls how long each unit of value sleeps. Defaults to 1ms.
-// Only works correctly with non-negative integer inputs.
-// Time: O(max(input))  Space: O(n)
+// Sleep Sort works correctly only with non-negative integer inputs.
+//
+// Time: O(max(input)). Space: O(n).
 type SleepSorter struct {
+	// ScaleFactor controls how long each unit of value sleeps. If zero, it
+	// defaults to one millisecond.
 	ScaleFactor time.Duration
 }
 
+// Name returns the algorithm's name, "Sleep Sort".
 func (s SleepSorter) Name() string { return "Sleep Sort" }
 
+// Sort returns a sorted copy of input using Sleep Sort. The input is not
+// modified. Results are reliable only for non-negative values; negative values
+// sleep for a non-positive duration and may appear out of order.
 func (s SleepSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}

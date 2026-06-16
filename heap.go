@@ -1,12 +1,17 @@
 package ordinex
 
-// HeapSorter implements Heap Sort.
-// Builds a max-heap, then repeatedly extracts the root to produce a sorted slice.
-// Time: O(n log n)  Space: O(1)
+// HeapSorter implements Heap Sort. It builds a max-heap, then repeatedly
+// extracts the root to produce a sorted slice.
+//
+// The zero value is ready to use.
+//
+// Time: O(n log n). Space: O(1).
 type HeapSorter struct{}
 
+// Name returns the algorithm's name, "Heap Sort".
 func (HeapSorter) Name() string { return "Heap Sort" }
 
+// Sort returns a sorted copy of input using Heap Sort. The input is not modified.
 func (HeapSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	n := len(arr)

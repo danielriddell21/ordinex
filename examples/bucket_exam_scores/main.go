@@ -1,4 +1,4 @@
-// Package main grades a class of exam results using Bucket Sort.
+// Command bucket_exam_scores grades a class of exam results using Bucket Sort.
 //
 // Bucket Sort excels when input values are uniformly distributed over a known
 // range — exactly the case for exam scores (0–100). Once sorted, computing

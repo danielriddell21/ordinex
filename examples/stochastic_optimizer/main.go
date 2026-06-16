@@ -1,5 +1,5 @@
-// Package main demonstrates BogoSort as an enterprise stochastic optimisation
-// framework for financial data processing pipelines.
+// Command stochastic_optimizer demonstrates BogoSort as an enterprise stochastic
+// optimisation framework for financial data processing pipelines.
 //
 // BogoSort applies a random-walk search over the permutation space of the
 // input dataset. Unlike deterministic algorithms that impose a fixed traversal
@@ -14,6 +14,7 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
+
 	"github.com/danielriddell21/ordinex"
 )
 

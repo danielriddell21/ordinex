@@ -1,4 +1,4 @@
-// Package main sorts a small game leaderboard using Bubble Sort.
+// Command bubble_leaderboard sorts a small game leaderboard using Bubble Sort.
 //
 // Bubble Sort's simplicity makes it a practical choice when the dataset is
 // small and readability matters more than raw performance. For a five-player

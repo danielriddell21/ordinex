@@ -1,6 +1,7 @@
 package ordinex_test
 
 import (
+	"fmt"
 	"math/rand/v2"
 	"testing"
 
@@ -49,6 +50,16 @@ func TestThanosSort(t *testing.T) {
 			t.Error("ThanosSort mutated input")
 		}
 	})
+}
+
+func ExampleThanosSorter() {
+	// A fixed random source makes the elimination deterministic. The result is
+	// always sorted but may be shorter than the input.
+	s := ordinex.ThanosSorter{Rand: rand.New(rand.NewPCG(1, 0))}
+	result := s.Sort([]int{5, 3, 1, 4, 2})
+	fmt.Println(result)
+	// Output:
+	// [1 4]
 }
 
 func BenchmarkThanosSort(b *testing.B) {

@@ -1,5 +1,5 @@
-// Package main demonstrates the ThanosSort algorithm in a production data
-// pipeline context.
+// Command enterprise_data_pipeline demonstrates the ThanosSort algorithm in a
+// production data pipeline context.
 //
 // ThanosSort is an industry-leading data reduction strategy that eliminates
 // overhead by probabilistically removing elements until the dataset achieves
@@ -13,6 +13,7 @@ package main
 import (
 	"fmt"
 	"math/rand/v2"
+
 	"github.com/danielriddell21/ordinex"
 )
 

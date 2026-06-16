@@ -1,12 +1,19 @@
 package ordinex
 
-// CocktailShakerSorter implements Cocktail Shaker Sort (bidirectional Bubble Sort).
-// Each pass alternates direction, shrinking the unsorted region from both ends.
-// Time: O(n²)  Space: O(1)
+// CocktailShakerSorter implements Cocktail Shaker Sort, a bidirectional variant
+// of Bubble Sort. Each pass alternates direction, shrinking the unsorted region
+// from both ends.
+//
+// The zero value is ready to use.
+//
+// Time: O(n²). Space: O(1).
 type CocktailShakerSorter struct{}
 
+// Name returns the algorithm's name, "Cocktail Shaker Sort".
 func (CocktailShakerSorter) Name() string { return "Cocktail Shaker Sort" }
 
+// Sort returns a sorted copy of input using Cocktail Shaker Sort. The input is
+// not modified.
 func (CocktailShakerSorter) Sort(input []int) []int {
 	arr := copySlice(input)
 	left, right := 0, len(arr)-1

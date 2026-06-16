@@ -48,6 +48,13 @@ func TestPancakeSort(t *testing.T) {
 	})
 }
 
+func ExamplePancakeSorter() {
+	s := ordinex.PancakeSorter{}
+	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
+	// Output:
+	// [1 2 3 4 5]
+}
+
 func BenchmarkPancakeSort(b *testing.B) {
 	s := ordinex.PancakeSorter{}
 	for _, size := range []int{100, 1000, 10000} {
