@@ -2,6 +2,7 @@ package ordinex
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -57,8 +58,8 @@ func (v VibeSorter) Sort(input []int) []int {
 		},
 	})
 
-	req, err := http.NewRequest("POST", "https://api.openai.com/v1/chat/completions",
-		bytes.NewReader(body))
+	req, err := http.NewRequestWithContext(context.Background(), http.MethodPost,
+		"https://api.openai.com/v1/chat/completions", bytes.NewReader(body))
 	if err != nil {
 		return out
 	}
@@ -69,7 +70,7 @@ func (v VibeSorter) Sort(input []int) []int {
 	if err != nil {
 		return out
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	var result struct {
 		Choices []struct {
