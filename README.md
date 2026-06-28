@@ -112,7 +112,6 @@ s := ordinex.ThanosSorter{
 
 Runnable examples for every algorithm are in the [`examples/`](examples/EXAMPLES.md) directory.
 
-## Docs
-
-- [Benchmark results](docs/BENCHMARKS.md) — measured on Apple M1 Pro
-- [Complexity chart](docs/COMPLEXITY.md) — visual comparison of all algorithms
+## Documentation
+- [Benchmark results](docs/benchmarks.md) — measured on Apple M1 Pro
+- [Complexity chart](docs/complexity.md) — visual comparison of all algorithms

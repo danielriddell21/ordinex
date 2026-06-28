@@ -22,8 +22,8 @@ ThanosSorter and StalinSorter may return a shorter slice than the input.
 - [pkg.go.dev reference](https://pkg.go.dev/github.com/danielriddell21/ordinex)
 - [README](https://github.com/danielriddell21/ordinex/blob/trunk/README.md)
 - [Examples](https://github.com/danielriddell21/ordinex/blob/trunk/examples/EXAMPLES.md)
-- [Benchmarks](https://github.com/danielriddell21/ordinex/blob/trunk/docs/BENCHMARKS.md)
-- [Complexity chart](https://github.com/danielriddell21/ordinex/blob/trunk/docs/COMPLEXITY.md)
+- [Benchmarks](https://github.com/danielriddell21/ordinex/blob/trunk/docs/benchmarks.md)
+- [Complexity chart](https://github.com/danielriddell21/ordinex/blob/trunk/docs/complexity.md)
 
 ## Algorithms
 
