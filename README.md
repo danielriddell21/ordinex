@@ -5,7 +5,7 @@
 One interface. No sacrifices required.
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/danielriddell21/ordinex.svg)](https://pkg.go.dev/github.com/danielriddell21/ordinex)
-[![CI](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yml/badge.svg)](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yml)
+[![CI](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yaml/badge.svg)](https://github.com/danielriddell21/ordinex/actions/workflows/ci.yaml)
 [![Go 1.25](https://img.shields.io/badge/go-1.25-blue)](https://go.dev)
 [![MIT License](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 
