@@ -11,7 +11,9 @@ func TestSleepSort(t *testing.T) {
 	if testing.Short() {
 		t.Skip("skipping Sleep Sort test in short mode")
 	}
-	s := ordinex.SleepSorter{ScaleFactor: time.Millisecond}
+	// A generous per-unit scale keeps adjacent values far enough apart that
+	// scheduler jitter cannot wake them out of order on a loaded machine.
+	s := ordinex.SleepSorter{ScaleFactor: 10 * time.Millisecond}
 	// Only test with small positive inputs; Sleep Sort is non-deterministic with duplicates.
 	cases := [][]int{
 		{},

@@ -9,7 +9,7 @@ import (
 )
 
 func TestSelectionSort(t *testing.T) {
-	s := ordinex.SelectionSorter{}
+	s := ordinex.SelectionSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,14 +49,14 @@ func TestSelectionSort(t *testing.T) {
 }
 
 func ExampleSelectionSorter() {
-	s := ordinex.SelectionSorter{}
+	s := ordinex.SelectionSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]
 }
 
 func BenchmarkSelectionSort(b *testing.B) {
-	s := ordinex.SelectionSorter{}
+	s := ordinex.SelectionSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {

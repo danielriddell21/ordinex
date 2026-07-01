@@ -32,7 +32,7 @@ func main() {
 	fmt.Println()
 
 	// ThanosSorter is configured with a fixed seed for reproducible data loss.
-	sorter := ordinex.ThanosSorter{
+	sorter := ordinex.ThanosSorter[int]{
 		Rand: rand.New(rand.NewPCG(99, 0)),
 	}
 

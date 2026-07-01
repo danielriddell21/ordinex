@@ -32,7 +32,7 @@ func main() {
 	fmt.Println("(MaxAttempts capped at 100,000 for SLA compliance)")
 	fmt.Println()
 
-	sorter := ordinex.BogoSorter{
+	sorter := ordinex.BogoSorter[int]{
 		MaxAttempts: 100_000,
 		Rand:        rand.New(rand.NewPCG(42, 0)),
 	}

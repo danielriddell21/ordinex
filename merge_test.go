@@ -9,7 +9,7 @@ import (
 )
 
 func TestMergeSort(t *testing.T) {
-	s := ordinex.MergeSorter{}
+	s := ordinex.MergeSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestMergeSort(t *testing.T) {
 }
 
 func BenchmarkMergeSort(b *testing.B) {
-	s := ordinex.MergeSorter{}
+	s := ordinex.MergeSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkMergeSort(b *testing.B) {
 }
 
 func ExampleMergeSorter() {
-	s := ordinex.MergeSorter{}
+	s := ordinex.MergeSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]

@@ -25,7 +25,7 @@ func main() {
 	fmt.Printf("South region (%d orders): %v\n", len(southRegion), southRegion)
 	fmt.Println()
 
-	sorted := ordinex.MergeSorter{}.Sort(combined)
+	sorted := ordinex.MergeSorter[int]{}.Sort(combined)
 
 	fmt.Printf("Combined     (%d orders): %v\n\n", len(sorted), sorted)
 

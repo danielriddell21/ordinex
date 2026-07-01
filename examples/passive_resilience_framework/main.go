@@ -34,7 +34,7 @@ func main() {
 	fmt.Println("Waiting for favourable cosmic ray conditions...")
 	fmt.Println()
 
-	sorter := ordinex.MiracleSorter{
+	sorter := ordinex.MiracleSorter[int]{
 		// MaxChecks is set to 1,000,000 as a pragmatic concession to demo runtime.
 		// In production, set to 0 and schedule a follow-up meeting for the result.
 		MaxChecks: 1_000_000,

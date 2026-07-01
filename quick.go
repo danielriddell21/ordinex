@@ -1,24 +1,29 @@
 package ordinex
 
+import (
+	"cmp"
+	"slices"
+)
+
 // QuickSorter implements Quick Sort using the Lomuto partition scheme. It
 // selects the last element as the pivot and partitions around it.
 //
 // The zero value is ready to use.
 //
 // Time: O(n log n) average, O(n²) worst. Space: O(log n).
-type QuickSorter struct{}
+type QuickSorter[T cmp.Ordered] struct{}
 
 // Name returns the algorithm's name, "Quick Sort".
-func (QuickSorter) Name() string { return "Quick Sort" }
+func (QuickSorter[T]) Name() string { return "Quick Sort" }
 
 // Sort returns a sorted copy of input using Quick Sort. The input is not modified.
-func (QuickSorter) Sort(input []int) []int {
-	arr := copySlice(input)
+func (QuickSorter[T]) Sort(input []T) []T {
+	arr := slices.Clone(input)
 	quickSort(arr, 0, len(arr)-1)
 	return arr
 }
 
-func quickSort(arr []int, low, high int) {
+func quickSort[T cmp.Ordered](arr []T, low, high int) {
 	if low < high {
 		pi := partition(arr, low, high)
 		quickSort(arr, low, pi-1)
@@ -26,7 +31,7 @@ func quickSort(arr []int, low, high int) {
 	}
 }
 
-func partition(arr []int, low, high int) int {
+func partition[T cmp.Ordered](arr []T, low, high int) int {
 	pivot := arr[high]
 	i := low - 1
 	for j := low; j < high; j++ {

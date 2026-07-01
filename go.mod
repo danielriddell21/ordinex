@@ -1,3 +1,3 @@
 module github.com/danielriddell21/ordinex
 
-go 1.25
+go 1.26.3

@@ -39,7 +39,7 @@ func main() {
 	fmt.Println("=== Home Office Catalogue — Sorted by Price ===")
 	fmt.Println()
 
-	sorted := ordinex.QuickSorter{}.Sort(prices)
+	sorted := ordinex.QuickSorter[int]{}.Sort(prices)
 
 	fmt.Printf("%-32s  %s\n", "Product", "Price")
 	fmt.Println(fmt.Sprintf("%-32s  %s", "--------------------------------", "--------"))

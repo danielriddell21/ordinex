@@ -9,7 +9,7 @@ import (
 )
 
 func TestHeapSort(t *testing.T) {
-	s := ordinex.HeapSorter{}
+	s := ordinex.HeapSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestHeapSort(t *testing.T) {
 }
 
 func BenchmarkHeapSort(b *testing.B) {
-	s := ordinex.HeapSorter{}
+	s := ordinex.HeapSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkHeapSort(b *testing.B) {
 }
 
 func ExampleHeapSorter() {
-	s := ordinex.HeapSorter{}
+	s := ordinex.HeapSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]

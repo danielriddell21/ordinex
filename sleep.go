@@ -9,7 +9,8 @@ import (
 // goroutine sleeps for a duration proportional to its value and then appends
 // itself to the result, so smaller values wake earlier and appear first.
 //
-// Sleep Sort works correctly only with non-negative integer inputs.
+// Sleep Sort works correctly only with non-negative integer inputs. It launches
+// one goroutine per element, so it is unsuited to large inputs.
 //
 // Time: O(max(input)). Space: O(n).
 type SleepSorter struct {

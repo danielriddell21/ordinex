@@ -2,10 +2,12 @@ package ordinex
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
+	"slices"
 )
 
 // VibeSorter implements Vibe Sort. It sends the slice to a Large Language Model
@@ -31,7 +33,7 @@ func (VibeSorter) Name() string { return "Vibe Sort" }
 // fewer than two elements, a copy of input is returned unchanged. The result is
 // whatever the model produces and is not guaranteed to be sorted.
 func (v VibeSorter) Sort(input []int) []int {
-	out := copySlice(input)
+	out := slices.Clone(input)
 	if len(out) <= 1 {
 		return out
 	}
@@ -57,8 +59,8 @@ func (v VibeSorter) Sort(input []int) []int {
 		},
 	})
 
-	req, err := http.NewRequest("POST", "https://api.openai.com/v1/chat/completions",
-		bytes.NewReader(body))
+	req, err := http.NewRequestWithContext(context.Background(), http.MethodPost,
+		"https://api.openai.com/v1/chat/completions", bytes.NewReader(body))
 	if err != nil {
 		return out
 	}
@@ -69,7 +71,7 @@ func (v VibeSorter) Sort(input []int) []int {
 	if err != nil {
 		return out
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	var result struct {
 		Choices []struct {

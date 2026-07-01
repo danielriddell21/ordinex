@@ -9,7 +9,7 @@ import (
 )
 
 func TestBubbleSort(t *testing.T) {
-	s := ordinex.BubbleSorter{}
+	s := ordinex.BubbleSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestBubbleSort(t *testing.T) {
 }
 
 func BenchmarkBubbleSort(b *testing.B) {
-	s := ordinex.BubbleSorter{}
+	s := ordinex.BubbleSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkBubbleSort(b *testing.B) {
 }
 
 func ExampleBubbleSorter() {
-	s := ordinex.BubbleSorter{}
+	s := ordinex.BubbleSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]

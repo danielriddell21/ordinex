@@ -30,7 +30,7 @@ func main() {
 
 	draw(stack, "Before (as served):")
 
-	sorted := ordinex.PancakeSorter{}.Sort(stack)
+	sorted := ordinex.PancakeSorter[int]{}.Sort(stack)
 
 	// Reverse for display: largest at bottom.
 	display := make([]int, len(sorted))

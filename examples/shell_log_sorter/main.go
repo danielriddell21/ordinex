@@ -42,7 +42,7 @@ func main() {
 	fmt.Println("=== Application Log — Chronological View ===")
 	fmt.Println()
 
-	sorted := ordinex.ShellSorter{}.Sort(timestamps)
+	sorted := ordinex.ShellSorter[int]{}.Sort(timestamps)
 
 	fmt.Printf("%-12s  %-7s  %s\n", "Timestamp", "Level", "Message")
 	fmt.Println("------------  -------  -------------------------------")

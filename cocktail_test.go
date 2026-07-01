@@ -9,7 +9,7 @@ import (
 )
 
 func TestCocktailShakerSort(t *testing.T) {
-	s := ordinex.CocktailShakerSorter{}
+	s := ordinex.CocktailShakerSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,14 +49,14 @@ func TestCocktailShakerSort(t *testing.T) {
 }
 
 func ExampleCocktailShakerSorter() {
-	s := ordinex.CocktailShakerSorter{}
+	s := ordinex.CocktailShakerSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]
 }
 
 func BenchmarkCocktailShakerSort(b *testing.B) {
-	s := ordinex.CocktailShakerSorter{}
+	s := ordinex.CocktailShakerSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {

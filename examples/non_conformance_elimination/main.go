@@ -33,7 +33,7 @@ func main() {
 	fmt.Println("Non-conforming values (below running maximum) will be purged.")
 	fmt.Println()
 
-	sorter := ordinex.StalinSorter{}
+	sorter := ordinex.StalinSorter[int]{}
 	result := sorter.Sort(monthlyActiveUsers)
 
 	eliminated := len(monthlyActiveUsers) - len(result)

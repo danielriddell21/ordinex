@@ -10,7 +10,7 @@ import (
 
 func TestMiracleSort(t *testing.T) {
 	t.Run("already sorted returns immediately", func(t *testing.T) {
-		s := ordinex.MiracleSorter{} // MaxChecks=0 is safe when input is sorted
+		s := ordinex.MiracleSorter[int]{} // MaxChecks=0 is safe when input is sorted
 		input := []int{1, 2, 3, 4, 5}
 		original := copyForTest(input)
 		got := s.Sort(input)
@@ -22,14 +22,14 @@ func TestMiracleSort(t *testing.T) {
 		}
 	})
 	t.Run("empty", func(t *testing.T) {
-		s := ordinex.MiracleSorter{}
+		s := ordinex.MiracleSorter[int]{}
 		got := s.Sort([]int{})
 		if len(got) != 0 {
 			t.Errorf("expected empty, got %v", got)
 		}
 	})
 	t.Run("single element", func(t *testing.T) {
-		s := ordinex.MiracleSorter{}
+		s := ordinex.MiracleSorter[int]{}
 		got := s.Sort([]int{42})
 		if !reflect.DeepEqual(got, []int{42}) {
 			t.Errorf("expected [42], got %v", got)
@@ -37,7 +37,7 @@ func TestMiracleSort(t *testing.T) {
 	})
 	t.Run("unsorted with MaxChecks exits without hanging", func(t *testing.T) {
 		// With MaxChecks=1, Sort exits after one check without blocking.
-		s := ordinex.MiracleSorter{MaxChecks: 1}
+		s := ordinex.MiracleSorter[int]{MaxChecks: 1}
 		input := []int{5, 3, 1}
 		got := s.Sort(input)
 		// Result is returned (unsorted) — miracle didn't happen.
@@ -49,10 +49,10 @@ func TestMiracleSort(t *testing.T) {
 
 func BenchmarkMiracleSort(b *testing.B) {
 	// Only benchmark with already-sorted input to avoid infinite loop.
-	s := ordinex.MiracleSorter{}
+	s := ordinex.MiracleSorter[int]{}
 	data := randomSlice(1000)
 	// Pre-sort the data so MiracleSort returns immediately.
-	sortedData := ordinex.MergeSorter{}.Sort(data)
+	sortedData := ordinex.MergeSorter[int]{}.Sort(data)
 	b.Run("n=1000_presorted", func(b *testing.B) {
 		for b.Loop() {
 			s.Sort(sortedData)
@@ -62,7 +62,7 @@ func BenchmarkMiracleSort(b *testing.B) {
 
 // MiracleSorter returns immediately when the input is already sorted.
 func ExampleMiracleSorter() {
-	s := ordinex.MiracleSorter{}
+	s := ordinex.MiracleSorter[int]{}
 	fmt.Println(s.Sort([]int{1, 2, 3, 4, 5}))
 	// Output:
 	// [1 2 3 4 5]

@@ -10,7 +10,7 @@ import (
 
 func TestThanosSort(t *testing.T) {
 	r := rand.New(rand.NewPCG(99, 0))
-	s := ordinex.ThanosSorter{Rand: r}
+	s := ordinex.ThanosSorter[int]{Rand: r}
 
 	t.Run("empty", func(t *testing.T) {
 		got := s.Sort([]int{})
@@ -55,7 +55,7 @@ func TestThanosSort(t *testing.T) {
 func ExampleThanosSorter() {
 	// A fixed random source makes the elimination deterministic. The result is
 	// always sorted but may be shorter than the input.
-	s := ordinex.ThanosSorter{Rand: rand.New(rand.NewPCG(1, 0))}
+	s := ordinex.ThanosSorter[int]{Rand: rand.New(rand.NewPCG(1, 0))}
 	result := s.Sort([]int{5, 3, 1, 4, 2})
 	fmt.Println(result)
 	// Output:
@@ -64,7 +64,7 @@ func ExampleThanosSorter() {
 
 func BenchmarkThanosSort(b *testing.B) {
 	r := rand.New(rand.NewPCG(42, 0))
-	s := ordinex.ThanosSorter{Rand: r}
+	s := ordinex.ThanosSorter[int]{Rand: r}
 	data := []int{3, 1, 2, 4, 5}
 	b.Run("n=5", func(b *testing.B) {
 		for b.Loop() {

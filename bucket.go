@@ -1,5 +1,7 @@
 package ordinex
 
+import "slices"
+
 // BucketSorter implements Bucket Sort. It distributes elements into buckets
 // based on their value range, sorts each bucket with insertion sort, then
 // concatenates the buckets in order.
@@ -17,23 +19,15 @@ func (BucketSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}
 	}
-	min, max := input[0], input[0]
-	for _, v := range input[1:] {
-		if v < min {
-			min = v
-		}
-		if v > max {
-			max = v
-		}
-	}
-	if min == max {
-		return copySlice(input)
+	lo, hi := slices.Min(input), slices.Max(input)
+	if lo == hi {
+		return slices.Clone(input)
 	}
 	numBuckets := len(input)
 	buckets := make([][]int, numBuckets)
-	rangeSize := float64(max-min+1) / float64(numBuckets)
+	rangeSize := float64(hi-lo+1) / float64(numBuckets)
 	for _, v := range input {
-		idx := int(float64(v-min) / rangeSize)
+		idx := int(float64(v-lo) / rangeSize)
 		if idx >= numBuckets {
 			idx = numBuckets - 1
 		}

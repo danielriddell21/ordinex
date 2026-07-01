@@ -9,7 +9,7 @@ import (
 )
 
 func TestInsertionSort(t *testing.T) {
-	s := ordinex.InsertionSorter{}
+	s := ordinex.InsertionSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestInsertionSort(t *testing.T) {
 }
 
 func BenchmarkInsertionSort(b *testing.B) {
-	s := ordinex.InsertionSorter{}
+	s := ordinex.InsertionSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkInsertionSort(b *testing.B) {
 }
 
 func ExampleInsertionSorter() {
-	s := ordinex.InsertionSorter{}
+	s := ordinex.InsertionSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]
