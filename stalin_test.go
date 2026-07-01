@@ -9,7 +9,7 @@ import (
 )
 
 func TestStalinSort(t *testing.T) {
-	s := ordinex.StalinSorter{}
+	s := ordinex.StalinSorter[int]{}
 
 	cases := []struct {
 		name  string
@@ -48,7 +48,7 @@ func TestStalinSort(t *testing.T) {
 }
 
 func BenchmarkStalinSort(b *testing.B) {
-	s := ordinex.StalinSorter{}
+	s := ordinex.StalinSorter[int]{}
 	data := randomSlice(1000)
 	b.Run("n=1000", func(b *testing.B) {
 		for b.Loop() {
@@ -60,7 +60,7 @@ func BenchmarkStalinSort(b *testing.B) {
 // StalinSorter removes any element smaller than the running maximum.
 // The returned slice is sorted but may be shorter than the input.
 func ExampleStalinSorter() {
-	s := ordinex.StalinSorter{}
+	s := ordinex.StalinSorter[int]{}
 	fmt.Println(s.Sort([]int{3, 1, 4, 1, 5, 9, 2, 6}))
 	// Output:
 	// [3 4 5 9]

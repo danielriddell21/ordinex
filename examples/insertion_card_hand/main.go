@@ -55,7 +55,7 @@ func main() {
 	}
 	fmt.Println()
 
-	sorted := ordinex.InsertionSorter{}.Sort(values)
+	sorted := ordinex.InsertionSorter[int]{}.Sort(values)
 
 	fmt.Print("Sorted: ")
 	for _, v := range sorted {

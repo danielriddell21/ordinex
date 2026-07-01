@@ -10,7 +10,7 @@ import (
 
 func TestBogoSort(t *testing.T) {
 	r := rand.New(rand.NewPCG(12345, 0))
-	s := ordinex.BogoSorter{MaxAttempts: 10000, Rand: r}
+	s := ordinex.BogoSorter[int]{MaxAttempts: 10000, Rand: r}
 
 	cases := []struct {
 		name  string
@@ -38,7 +38,7 @@ func TestBogoSort(t *testing.T) {
 
 func BenchmarkBogoSort(b *testing.B) {
 	r := rand.New(rand.NewPCG(42, 0))
-	s := ordinex.BogoSorter{MaxAttempts: 100000, Rand: r}
+	s := ordinex.BogoSorter[int]{MaxAttempts: 100000, Rand: r}
 	data := []int{3, 1, 2}
 	b.Run("n=3", func(b *testing.B) {
 		for b.Loop() {

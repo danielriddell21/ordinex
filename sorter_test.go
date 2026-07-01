@@ -3,23 +3,17 @@ package ordinex_test
 import (
 	"fmt"
 	"math/rand/v2"
+	"slices"
 
 	"github.com/danielriddell21/ordinex"
 )
 
 func copyForTest(s []int) []int {
-	out := make([]int, len(s))
-	copy(out, s)
-	return out
+	return slices.Clone(s)
 }
 
 func isSortedTest(s []int) bool {
-	for i := 1; i < len(s); i++ {
-		if s[i] < s[i-1] {
-			return false
-		}
-	}
-	return true
+	return slices.IsSorted(s)
 }
 
 func randomSlice(n int) []int {
@@ -31,12 +25,13 @@ func randomSlice(n int) []int {
 	return s
 }
 
-// Every sorter satisfies the Sorter interface, so algorithms are interchangeable.
+// Every comparison-based sorter satisfies Sorter[int], so algorithms are
+// interchangeable.
 func Example() {
-	sorters := []ordinex.Sorter{
-		ordinex.QuickSorter{},
-		ordinex.MergeSorter{},
-		ordinex.HeapSorter{},
+	sorters := []ordinex.Sorter[int]{
+		ordinex.QuickSorter[int]{},
+		ordinex.MergeSorter[int]{},
+		ordinex.HeapSorter[int]{},
 	}
 	input := []int{5, 3, 1, 4, 2}
 	for _, s := range sorters {

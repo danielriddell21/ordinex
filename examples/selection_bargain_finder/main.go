@@ -41,7 +41,7 @@ func main() {
 	fmt.Println("=== Bargain Finder — Cheapest Items ===")
 	fmt.Println()
 
-	sorted := ordinex.SelectionSorter{}.Sort(prices)
+	sorted := ordinex.SelectionSorter[int]{}.Sort(prices)
 
 	fmt.Printf("%-22s  %s\n", "Item", "Price")
 	fmt.Println("----------------------  -----")

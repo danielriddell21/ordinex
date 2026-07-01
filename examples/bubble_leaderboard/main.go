@@ -33,7 +33,7 @@ func main() {
 	fmt.Println("=== Weekly Leaderboard ===")
 	fmt.Println()
 
-	sorted := ordinex.BubbleSorter{}.Sort(scores)
+	sorted := ordinex.BubbleSorter[int]{}.Sort(scores)
 
 	// Rebuild the leaderboard in descending order.
 	fmt.Printf("%-5s %-10s %s\n", "Rank", "Player", "Score")

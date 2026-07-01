@@ -25,7 +25,7 @@ func main() {
 	fmt.Println()
 	fmt.Printf("Raw RTTs (ms):    %v\n", rtts)
 
-	sorted := ordinex.CocktailShakerSorter{}.Sort(rtts)
+	sorted := ordinex.CocktailShakerSorter[int]{}.Sort(rtts)
 
 	fmt.Printf("Sorted RTTs (ms): %v\n\n", sorted)
 

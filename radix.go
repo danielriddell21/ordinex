@@ -1,5 +1,7 @@
 package ordinex
 
+import "slices"
+
 // RadixSorter implements Radix Sort, least-significant-digit first in base 10.
 // It sorts numbers by processing their digits from least to most significant.
 // Negative integers are handled by sorting the negatives and non-negatives
@@ -18,21 +20,17 @@ func (RadixSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}
 	}
-	// Split into non-negatives and negatives
 	var neg, pos []int
 	for _, v := range input {
 		if v < 0 {
-			neg = append(neg, -v) // store absolute values
+			neg = append(neg, -v)
 		} else {
 			pos = append(pos, v)
 		}
 	}
 	pos = radixLSD(pos)
 	neg = radixLSD(neg)
-	// Reverse negatives: largest absolute value is most negative
-	for i, j := 0, len(neg)-1; i < j; i, j = i+1, j-1 {
-		neg[i], neg[j] = neg[j], neg[i]
-	}
+	slices.Reverse(neg)
 	result := make([]int, 0, len(input))
 	for _, v := range neg {
 		result = append(result, -v)
@@ -45,13 +43,8 @@ func radixLSD(arr []int) []int {
 	if len(arr) == 0 {
 		return arr
 	}
-	max := arr[0]
-	for _, v := range arr[1:] {
-		if v > max {
-			max = v
-		}
-	}
-	for exp := 1; max/exp > 0; exp *= 10 {
+	hi := slices.Max(arr)
+	for exp := 1; hi/exp > 0; exp *= 10 {
 		arr = countingByDigit(arr, exp)
 	}
 	return arr

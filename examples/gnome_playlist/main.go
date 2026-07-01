@@ -36,7 +36,7 @@ func main() {
 	fmt.Println("=== Playlist — Sorted by Duration ===")
 	fmt.Println()
 
-	sorted := ordinex.GnomeSorter{}.Sort(durations)
+	sorted := ordinex.GnomeSorter[int]{}.Sort(durations)
 
 	fmt.Printf("%-3s  %-30s  %s\n", "#", "Title", "Duration")
 	fmt.Println("---  ------------------------------  --------")

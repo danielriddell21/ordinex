@@ -9,7 +9,7 @@ import (
 )
 
 func TestQuickSort(t *testing.T) {
-	s := ordinex.QuickSorter{}
+	s := ordinex.QuickSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,7 +49,7 @@ func TestQuickSort(t *testing.T) {
 }
 
 func BenchmarkQuickSort(b *testing.B) {
-	s := ordinex.QuickSorter{}
+	s := ordinex.QuickSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
@@ -61,7 +61,7 @@ func BenchmarkQuickSort(b *testing.B) {
 }
 
 func ExampleQuickSorter() {
-	s := ordinex.QuickSorter{}
+	s := ordinex.QuickSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]

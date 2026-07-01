@@ -9,7 +9,7 @@ import (
 )
 
 func TestPancakeSort(t *testing.T) {
-	s := ordinex.PancakeSorter{}
+	s := ordinex.PancakeSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,14 +49,14 @@ func TestPancakeSort(t *testing.T) {
 }
 
 func ExamplePancakeSorter() {
-	s := ordinex.PancakeSorter{}
+	s := ordinex.PancakeSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]
 }
 
 func BenchmarkPancakeSort(b *testing.B) {
-	s := ordinex.PancakeSorter{}
+	s := ordinex.PancakeSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {

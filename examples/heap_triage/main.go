@@ -35,7 +35,7 @@ func main() {
 	fmt.Println("=== A&E Triage Queue ===")
 	fmt.Println()
 
-	sorted := ordinex.HeapSorter{}.Sort(scores)
+	sorted := ordinex.HeapSorter[int]{}.Sort(scores)
 
 	urgency := func(score int) string {
 		switch {

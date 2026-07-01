@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"slices"
 )
 
 // VibeSorter implements Vibe Sort. It sends the slice to a Large Language Model
@@ -32,7 +33,7 @@ func (VibeSorter) Name() string { return "Vibe Sort" }
 // fewer than two elements, a copy of input is returned unchanged. The result is
 // whatever the model produces and is not guaranteed to be sorted.
 func (v VibeSorter) Sort(input []int) []int {
-	out := copySlice(input)
+	out := slices.Clone(input)
 	if len(out) <= 1 {
 		return out
 	}

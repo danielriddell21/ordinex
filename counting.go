@@ -1,5 +1,7 @@
 package ordinex
 
+import "slices"
+
 // CountingSorter implements Counting Sort. It counts the frequency of each value
 // and reconstructs the sorted slice from those counts. Negative integers are
 // supported via a min-value offset.
@@ -19,23 +21,15 @@ func (CountingSorter) Sort(input []int) []int {
 	if len(input) == 0 {
 		return []int{}
 	}
-	min, max := input[0], input[0]
-	for _, v := range input[1:] {
-		if v < min {
-			min = v
-		}
-		if v > max {
-			max = v
-		}
-	}
-	count := make([]int, max-min+1)
+	lo, hi := slices.Min(input), slices.Max(input)
+	count := make([]int, hi-lo+1)
 	for _, v := range input {
-		count[v-min]++
+		count[v-lo]++
 	}
 	result := make([]int, 0, len(input))
 	for i, c := range count {
 		for range c {
-			result = append(result, i+min)
+			result = append(result, i+lo)
 		}
 	}
 	return result

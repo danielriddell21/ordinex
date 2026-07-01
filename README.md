@@ -19,23 +19,39 @@ go get github.com/danielriddell21/ordinex@latest
 ```go
 import "github.com/danielriddell21/ordinex"
 
-s := ordinex.MergeSorter{}
+s := ordinex.MergeSorter[int]{}
 sorted := s.Sort([]int{5, 3, 1, 4, 2})
 // sorted == [1 2 3 4 5], original is unchanged
 fmt.Println(s.Name()) // "Merge Sort"
+
+// Comparison-based sorters work on any cmp.Ordered type:
+words := ordinex.QuickSorter[string]{}.Sort([]string{"pear", "apple", "kiwi"})
+// words == [apple kiwi pear]
 ```
 
-Every sorter satisfies the `Sorter` interface:
+Every sorter satisfies the `Sorter` interface, generic over the element type:
 
 ```go
-type Sorter interface {
-    Sort(input []int) []int
+type Sorter[T cmp.Ordered] interface {
+    Sort(input []T) []T
     Name() string
 }
 ```
 
+Comparison-based sorters are generic over any `cmp.Ordered` type. The
+integer-specific sorters — `BucketSorter`, `CountingSorter` and `RadixSorter` —
+rely on integer arithmetic, and the novelty sorters `SleepSorter` and
+`VibeSorter` operate on integers too; all five implement `Sorter[int]`.
+
 `Sort` returns a sorted **copy** — the original slice is never modified.
 `ThanosSorter` and `StalinSorter` may return a shorter slice than the input.
+
+## Why not `slices.Sort`?
+
+For production code, reach for the standard library — `slices.Sort` and
+`slices.SortFunc` are the right tool. ordinex exists for teaching and
+exploration: a single interface that lets you swap in and compare a whole
+family of sorting algorithms (including some you should never ship) at runtime.
 
 ## Algorithms
 
@@ -68,7 +84,7 @@ Most sorters are empty structs and need no configuration. A few have fields:
 ### BogoSorter
 
 ```go
-s := ordinex.BogoSorter{
+s := ordinex.BogoSorter[int]{
     MaxAttempts: 1000,                        // 0 = unlimited
     Rand:        rand.New(rand.NewPCG(42, 0)), // nil = seeded from time
 }
@@ -85,7 +101,7 @@ s := ordinex.SleepSorter{
 ### MiracleSorter
 
 ```go
-s := ordinex.MiracleSorter{
+s := ordinex.MiracleSorter[int]{
     MaxChecks: 1000, // 0 = no limit
 }
 ```
@@ -102,7 +118,7 @@ s := ordinex.VibeSorter{
 ### ThanosSorter
 
 ```go
-s := ordinex.ThanosSorter{
+s := ordinex.ThanosSorter[int]{
     Rand: rand.New(rand.NewPCG(42, 0)), // nil = seeded from time
 }
 ```

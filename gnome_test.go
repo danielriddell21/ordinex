@@ -9,7 +9,7 @@ import (
 )
 
 func TestGnomeSort(t *testing.T) {
-	s := ordinex.GnomeSorter{}
+	s := ordinex.GnomeSorter[int]{}
 	cases := []struct {
 		name  string
 		input []int
@@ -49,14 +49,14 @@ func TestGnomeSort(t *testing.T) {
 }
 
 func ExampleGnomeSorter() {
-	s := ordinex.GnomeSorter{}
+	s := ordinex.GnomeSorter[int]{}
 	fmt.Println(s.Sort([]int{5, 3, 1, 4, 2}))
 	// Output:
 	// [1 2 3 4 5]
 }
 
 func BenchmarkGnomeSort(b *testing.B) {
-	s := ordinex.GnomeSorter{}
+	s := ordinex.GnomeSorter[int]{}
 	for _, size := range []int{100, 1000, 10000} {
 		data := randomSlice(size)
 		b.Run(fmt.Sprintf("n=%d", size), func(b *testing.B) {
