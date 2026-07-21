@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 func TestSleepSort(t *testing.T) {

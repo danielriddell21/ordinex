@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"math/rand/v2"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 func main() {

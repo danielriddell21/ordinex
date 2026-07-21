@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 // fullSorters lists every sorter that returns a full permutation of its input

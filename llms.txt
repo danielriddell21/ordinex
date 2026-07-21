@@ -2,7 +2,7 @@
 
 > A Go library providing 19 sorting algorithm implementations behind a single `Sorter` interface. One interface. No sacrifices required.
 
-ordinex is importable as `github.com/danielriddell21/ordinex`. It has no external dependencies.
+ordinex is importable as `github.com/danielriddell21/ordinex/v2`. It has no external dependencies.
 
 The central interface:
 

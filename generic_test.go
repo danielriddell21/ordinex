@@ -4,7 +4,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 // The comparison-based sorters are generic, so they sort any cmp.Ordered type,

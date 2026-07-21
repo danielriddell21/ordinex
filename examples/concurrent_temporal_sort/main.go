@@ -11,7 +11,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 	"time"
 )
 

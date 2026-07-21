@@ -1,6 +1,6 @@
 package ordinex_test
 
-import "github.com/danielriddell21/ordinex"
+import "github.com/danielriddell21/ordinex/v2"
 
 // Every sorter satisfies Sorter[int]; the comparison-based ones also satisfy
 // Sorter for other cmp.Ordered element types.

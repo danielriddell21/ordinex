@@ -11,13 +11,13 @@ One interface. No sacrifices required.
 
 ## Install
 ```sh
-go get github.com/danielriddell21/ordinex@latest
+go get github.com/danielriddell21/ordinex/v2@latest
 ```
 
 ## Quick start
 
 ```go
-import "github.com/danielriddell21/ordinex"
+import "github.com/danielriddell21/ordinex/v2"
 
 s := ordinex.MergeSorter[int]{}
 sorted := s.Sort([]int{5, 3, 1, 4, 2})

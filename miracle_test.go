@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 func TestMiracleSort(t *testing.T) {

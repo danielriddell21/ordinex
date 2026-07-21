@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 	"slices"
 
-	"github.com/danielriddell21/ordinex"
+	"github.com/danielriddell21/ordinex/v2"
 )
 
 func copyForTest(s []int) []int {
